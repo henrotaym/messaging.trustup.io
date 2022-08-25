@@ -23,7 +23,6 @@ services:
             - '.:/var/www/html'
         networks:
             - messaging.trustup.io_sail
-            - applications
         depends_on:
             - messaging.trustup.io_mysql
             - messaging.trustup.io_redis
@@ -90,9 +89,6 @@ services:
 networks:
     messaging.trustup.io_sail:
         driver: bridge
-    applications:
-        name: applications
-        external: true
 volumes:
     messaging.trustup.io_sail-mysql:
         driver: local
