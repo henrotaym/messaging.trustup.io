@@ -891,16 +891,16 @@
         },
         {
             "name": "henrotaym/laravel-api-client",
-            "version": "v1.4.0",
+            "version": "v1.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/henrotaym/laravel-api-client.git",
-                "reference": "c0a7afadd843d324bb6736a880180ea4881fb5c9"
+                "reference": "2735f2fcea2f07bef0e450e44048ca568f4f9e9c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/henrotaym/laravel-api-client/zipball/c0a7afadd843d324bb6736a880180ea4881fb5c9",
-                "reference": "c0a7afadd843d324bb6736a880180ea4881fb5c9",
+                "url": "https://api.github.com/repos/henrotaym/laravel-api-client/zipball/2735f2fcea2f07bef0e450e44048ca568f4f9e9c",
+                "reference": "2735f2fcea2f07bef0e450e44048ca568f4f9e9c",
                 "shasum": ""
             },
             "require": {
@@ -938,9 +938,9 @@
             "description": "Fluent api client using laravel Http facade.",
             "support": {
                 "issues": "https://github.com/henrotaym/laravel-api-client/issues",
-                "source": "https://github.com/henrotaym/laravel-api-client/tree/v1.4.0"
+                "source": "https://github.com/henrotaym/laravel-api-client/tree/v1.4.2"
             },
-            "time": "2022-02-09T14:27:27+00:00"
+            "time": "2022-08-25T13:54:13+00:00"
         },
         {
             "name": "henrotaym/laravel-container-auto-register",
