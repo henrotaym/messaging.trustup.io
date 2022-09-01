@@ -2,6 +2,7 @@
 
 use App\Api\MediaTrustupIo\Endpoints\Media;
 use Henrotaym\LaravelTrustupMediaIo\Contracts\Endpoints\MediaEndpointContract;
+use Henrotaym\LaravelTrustupMediaIo\Contracts\Transformers\Models\MediaTransformerContract;
 use Henrotaym\LaravelTrustupMediaIoCommon\Contracts\Models\StorableMediaContract;
 use Henrotaym\LaravelTrustupMediaIoCommon\Contracts\Requests\Media\StoreMediaRequestContract;
 use Henrotaym\LaravelTrustupMediaIoCommon\Contracts\Transformers\Models\StorableMediaTransformerContract;
@@ -30,14 +31,16 @@ Route::post('upload', function(
     Request $request,
     MediaEndpointContract $mediaEndpoint,
     StoreMediaRequestContract $storeMediaRequest,
-    StorableMediaTransformerContract $transformer,
+    StorableMediaTransformerContract $storableMediaTransformer,
+    MediaTransformerContract $mediaTransformer
 ) {
     $storeMediaRequest->setAppKey('invoicing')
         ->setCollection('testing')
         ->setModelId(135)
         ->setModelType('professional')
-        ->addMedia($transformer->fromResource($request->file('file')))
+        ->addMedia($storableMediaTransformer->fromResource($request->file('file')))
         ->useQueue(false);
 
-    dd($response = $mediaEndpoint->store($storeMediaRequest)->getResponse()->response()->get());
+    $media = $mediaEndpoint->store($storeMediaRequest)->getFirstMedia();
+    return response($mediaTransformer->toArray($media));
 })->name('upload');
