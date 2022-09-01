@@ -1,6 +1,12 @@
 <?php
 
 use App\Api\MediaTrustupIo\Endpoints\Media;
+use Henrotaym\LaravelTrustupMediaIo\Contracts\Endpoints\MediaEndpointContract;
+use Henrotaym\LaravelTrustupMediaIoCommon\Contracts\Models\StorableMediaContract;
+use Henrotaym\LaravelTrustupMediaIoCommon\Contracts\Requests\Media\StoreMediaRequestContract;
+use Henrotaym\LaravelTrustupMediaIoCommon\Contracts\Transformers\Models\StorableMediaTransformerContract;
+use Henrotaym\LaravelTrustupMediaIoCommon\Transformers\Models\StorableMediaTransformer;
+use Henrotaym\LaravelTrustupMediaIoCommon\Transformers\Requests\Media\StoreMediaRequestTransformer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
@@ -22,21 +28,21 @@ Route::get('/', function () {
 
 // fopen($request->file('file')->getPathname(), 'r')
 
-Route::post('upload', function(Request $request, Media $mediaEnpoint) {
-    $response = Http::asMultipart()->post(env('MEDIA_URL'). '/api/media', [
-        // 'content' => $request->file('file')->get(),
-        'name' => $request->file('file')->getClientOriginalName()
-    ]);
+Route::post('upload', function(
+    Request $request,
+    MediaEndpointContract $mediaEndpoint,
+    StoreMediaRequestContract $storeMediaRequest,
+    StorableMediaTransformerContract $transformer,
+    StoreMediaRequestTransformer $requestTransformer
+) {
+    $storeMediaRequest->setAppKey('invoicing')
+        ->setCollection('testing')
+        ->setModelId(135)
+        ->setModelType('professional')
+        ->addMedia($transformer->fromResource($request->file('file')))
+        ->useQueue(false);
 
-    // return $response->body();
-
-    $response = $mediaEnpoint->store($request->file('file'));
-
-    if ($response->failed()):
-        dd($response->error()->context());
-    endif;
-
-    return $response->response()->get();
+    dd($response = $mediaEndpoint->store($storeMediaRequest)->getResponse()->response()->get(), 'success boyz');
 
     // return $response->body();
 

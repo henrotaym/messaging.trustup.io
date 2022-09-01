@@ -22,7 +22,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get(
     'hello',
     fn () =>  
-        response(['media_response' => Http::get(env('MEDIA_URL'). '/api/hello')->json()])
+        response(['media_response' => Http::get(env('TRUSTUP_MEDIA_IO_URL'). '/api/hello')->json()])
 );
 
 Route::get('test', fn() => response(['message' => 'test']));
