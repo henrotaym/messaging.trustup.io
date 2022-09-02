@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d3ec0213bd1a2a6e95243431e38ef052",
+    "content-hash": "b65a684d8f9dbf3849b2cc6d3210d537",
     "packages": [
         {
             "name": "brick/math",
@@ -1205,16 +1205,16 @@
         },
         {
             "name": "henrotaym/laravel-trustup-media-io",
-            "version": "v1.0.2-alpha.2",
+            "version": "v1.0.2-alpha.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/henrotaym/laravel-trustup-media-io.git",
-                "reference": "fc0a552ec2e5813e7bbf13a262c8f2a9bd2b94d0"
+                "reference": "5f080485eb8c5303735452533a016aff4acff9ce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/henrotaym/laravel-trustup-media-io/zipball/fc0a552ec2e5813e7bbf13a262c8f2a9bd2b94d0",
-                "reference": "fc0a552ec2e5813e7bbf13a262c8f2a9bd2b94d0",
+                "url": "https://api.github.com/repos/henrotaym/laravel-trustup-media-io/zipball/5f080485eb8c5303735452533a016aff4acff9ce",
+                "reference": "5f080485eb8c5303735452533a016aff4acff9ce",
                 "shasum": ""
             },
             "require": {
@@ -1253,9 +1253,9 @@
             "description": "Used by trustup applications to store and retrieve media",
             "support": {
                 "issues": "https://github.com/henrotaym/laravel-trustup-media-io/issues",
-                "source": "https://github.com/henrotaym/laravel-trustup-media-io/tree/v1.0.2-alpha.2"
+                "source": "https://github.com/henrotaym/laravel-trustup-media-io/tree/v1.0.2-alpha.3"
             },
-            "time": "2022-09-02T09:46:32+00:00"
+            "time": "2022-09-02T10:28:31+00:00"
         },
         {
             "name": "henrotaym/laravel-trustup-media-io-common",
