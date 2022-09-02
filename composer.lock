@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f9c05e01b2922b27e110d520ae92e5a2",
+    "content-hash": "d3ec0213bd1a2a6e95243431e38ef052",
     "packages": [
         {
             "name": "brick/math",
@@ -1205,16 +1205,16 @@
         },
         {
             "name": "henrotaym/laravel-trustup-media-io",
-            "version": "v1.0.2-alpha.1",
+            "version": "v1.0.2-alpha.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/henrotaym/laravel-trustup-media-io.git",
-                "reference": "702ceb25267f5ba0c2e4feaea154eb51c41bbc56"
+                "reference": "fc0a552ec2e5813e7bbf13a262c8f2a9bd2b94d0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/henrotaym/laravel-trustup-media-io/zipball/702ceb25267f5ba0c2e4feaea154eb51c41bbc56",
-                "reference": "702ceb25267f5ba0c2e4feaea154eb51c41bbc56",
+                "url": "https://api.github.com/repos/henrotaym/laravel-trustup-media-io/zipball/fc0a552ec2e5813e7bbf13a262c8f2a9bd2b94d0",
+                "reference": "fc0a552ec2e5813e7bbf13a262c8f2a9bd2b94d0",
                 "shasum": ""
             },
             "require": {
@@ -1253,9 +1253,9 @@
             "description": "Used by trustup applications to store and retrieve media",
             "support": {
                 "issues": "https://github.com/henrotaym/laravel-trustup-media-io/issues",
-                "source": "https://github.com/henrotaym/laravel-trustup-media-io/tree/v1.0.2-alpha.1"
+                "source": "https://github.com/henrotaym/laravel-trustup-media-io/tree/v1.0.2-alpha.2"
             },
-            "time": "2022-09-01T16:49:34+00:00"
+            "time": "2022-09-02T09:46:32+00:00"
         },
         {
             "name": "henrotaym/laravel-trustup-media-io-common",
@@ -2119,16 +2119,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "2.62.0",
+            "version": "2.62.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "7507aec3d626797ce2123cf6c6556683be22b5f8"
+                "reference": "01bc4cdefe98ef58d1f9cb31bdbbddddf2a88f7a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/7507aec3d626797ce2123cf6c6556683be22b5f8",
-                "reference": "7507aec3d626797ce2123cf6c6556683be22b5f8",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/01bc4cdefe98ef58d1f9cb31bdbbddddf2a88f7a",
+                "reference": "01bc4cdefe98ef58d1f9cb31bdbbddddf2a88f7a",
                 "shasum": ""
             },
             "require": {
@@ -2217,7 +2217,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-08-28T19:48:05+00:00"
+            "time": "2022-09-02T07:48:13+00:00"
         },
         {
             "name": "nette/schema",
