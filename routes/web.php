@@ -8,6 +8,7 @@ use Henrotaym\LaravelTrustupMediaIoCommon\Contracts\Models\StorableMediaContract
 use Henrotaym\LaravelTrustupMediaIoCommon\Contracts\Requests\Media\GetMediaRequestContract;
 use Henrotaym\LaravelTrustupMediaIoCommon\Contracts\Requests\Media\StoreMediaRequestContract;
 use Henrotaym\LaravelTrustupMediaIoCommon\Contracts\Transformers\Models\StorableMediaTransformerContract;
+use Henrotaym\LaravelTrustupMediaIoCommon\Enums\Media\MediaCollections;
 use Henrotaym\LaravelTrustupMediaIoCommon\Transformers\Models\StorableMediaTransformer;
 use Henrotaym\LaravelTrustupMediaIoCommon\Transformers\Requests\Media\StoreMediaRequestTransformer;
 use Illuminate\Http\Request;
@@ -33,11 +34,11 @@ Route::get('/media', function (
     GetMediaRequestContract $request,
     MediaEndpointContract $endpoint
 ) {
-    $request->setAppKey('invoicing')
-        ->setCollection('test')
+    $request
+        ->setMediaCollection(MediaCollections::IMAGES)
         ->setModelId(135)
         ->setModelType('professional')
-        ->firstOnly(true);
+        ->firstOnly(false);
     
     $response = $endpoint->get($request);
 
@@ -54,13 +55,12 @@ Route::post('upload', function(
     StoreMediaRequestContract $storeMediaRequest,
     StorableMediaTransformerContract $storableMediaTransformer,
 ) {
-    $storeMediaRequest->setAppKey('invoicing')
-        ->setCollection('test')
-        ->setModelId(135)
+    $storeMediaRequest
+        ->setMediaCollection(MediaCollections::IMAGES)
+        ->setModelId(136)
         ->setModelType('professional')
         ->addMedia($storableMediaTransformer->fromResource($request->file('file')))
-        // ->addMedia($storableMediaTransformer->fromResource("https://static.remove.bg/remove-bg-web/45b4adb99db629ba364dd1649ab6e33dfec34929/assets/start_remove-c851bdf8d3127a24e2d137a55b1b427378cd17385b01aec6e59d5d4b5f39d2ec.png"))
-        ->useQueue(true);
+        ->useQueue(false);
 
     $response = $mediaEndpoint->store($storeMediaRequest);
 
